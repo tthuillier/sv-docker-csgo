@@ -20,8 +20,6 @@ jobs:
         - name: Build
           run: ./buildimg.sh
 
-        - name: Run
-          command_
-          
+        - name: Run          
           timeout-minutes: 0.2
           run: ./csgo 27015
