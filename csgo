@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ $# != 0 ]
+then
+    echo "Exposing server on port $1"
+    docker run -p $1:27015/udp -it Cycom/csgo
+else
+    echo "Exposing server on port 27015"
+    docker run -p 27015:27015/udp -it Cycom/csgo
+fi
