@@ -6,22 +6,20 @@ defaults:
     run:
         shell: bash
         working-directory: .
-        runs-on: ubuntu-latest
 
 jobs:
     build-docker:
+
+        runs-on: ubuntu-latest
+
         name: Build CSGO Docker
 
         steps:
         - uses: actions/checkout@v2
+
         - name: Build
           run: ./buildimg.sh
 
-    run-docker:
-        name: Run CSGO Docker
-
-        steps:
-        - uses: actions/checkout@v2
         - name: Run
           command_timeout: 10s
           run: ./csgo 27015
